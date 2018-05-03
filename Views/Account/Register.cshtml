@@ -1,0 +1,16 @@
+﻿@using Identity_Assignment.Models
+@model RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken();
+    @Html.EditorForModel();
+    @Html.Hidden("returnUrl", (string)ViewBag.RedirectUrl);
+    <input type="submit" value="Register" />
+}
